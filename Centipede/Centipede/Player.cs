@@ -13,7 +13,7 @@ namespace Centipede
         public Player()
             :base("spr_player")
         {
-            
+
         }
 
         public override void Update(GameTime gameTime)
