@@ -12,14 +12,16 @@ namespace Centipede
         SpriteGameObject background;
         Bullet bullet;
         GameObject player;
-        GameObjectList snake;
+        GameObjectList snake, mushrooms;
         SnakeSegment newSnakeSegment;
+        Mushroom newMushroom;
         public PlayingState()
         {
             background = new SpriteGameObject("spr_background");
             player = new Player();
             player.Position = new Vector2(235, 500);
             snake = new GameObjectList();
+            mushrooms = new GameObjectList();
 
             for (int i = 0; i < 10; i++)
             {
@@ -27,11 +29,18 @@ namespace Centipede
                 snake.Add(newSnakeSegment);
             }
 
+            for (int i = 0; i < 20; i++)
+            {
+                newMushroom = new Mushroom();
+                mushrooms.Add(newMushroom);
+            }
+
 
 
             this.Add(background);
             this.Add(player);
             this.Add(snake);
+            this.Add(mushrooms);
 
         }
 
